@@ -1,0 +1,737 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* university1
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0-20250320\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-23 12:25+0000\n"
+"PO-Revision-Date: 2025-04-23 12:25+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: university1
+#: model:ir.actions.report,print_report_name:university1.action_report_student
+msgid "'Student Report - %s' % (object.name)"
+msgstr ""
+
+#. module: university1
+#: model:mail.template,body_html:university1.email_template_student_report
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"                        Dear ,\n"
+"                        <br/><br/>\n"
+"                        Please find attached your complete academic report from .\n"
+"                        <br/><br/>\n"
+"                        This report includes:\n"
+"                        </p><ul>\n"
+"                            <li>Your personal and contact information</li>\n"
+"                            <li>Current course enrollments</li>\n"
+"                            <li>Academic performance summary</li>\n"
+"                            <li>Detailed grade history</li>\n"
+"                        </ul>\n"
+"                        <br/>\n"
+"                        If you notice any discrepancies in the report or have any questions, please contact your tutor \n"
+"                        () \n"
+"                        or the university administration.\n"
+"                        <br/><br/>\n"
+"                        Best regards,<br/>\n"
+"                         Administration\n"
+"                    \n"
+"                </div>\n"
+"            "
+msgstr ""
+
+#. module: university1
+#: model_terms:ir.ui.view,arch_db:university1.student_report_document
+msgid "<i class=\"fa fa-address-card\"/> Contact Information"
+msgstr ""
+
+#. module: university1
+#: model_terms:ir.ui.view,arch_db:university1.portal_my_home_grades
+msgid "<i class=\"fa fa-graduation-cap me-2\"/>Grades"
+msgstr ""
+
+#. module: university1
+#: model_terms:ir.ui.view,arch_db:university1.student_report_document
+msgid "<i class=\"fa fa-graduation-cap\"/> Academic Summary"
+msgstr ""
+
+#. module: university1
+#: model_terms:ir.ui.view,arch_db:university1.student_report_document
+msgid "<i class=\"fa fa-history\"/> Grade History"
+msgstr ""
+
+#. module: university1
+#: model_terms:ir.ui.view,arch_db:university1.portal_my_home_grades
+msgid "<small class=\"text-muted\">View grade history</small>"
+msgstr ""
+
+#. module: university1
+#. odoo-python
+#: code:addons/university1/models/student.py:0
+msgid "A sample email has been send to %s"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.constraint,message:university1.constraint_university_student_unique_user
+msgid "A user can only be linked to one student!"
+msgstr ""
+
+#. module: university1
+#: model_terms:ir.ui.view,arch_db:university1.view_student_form
+msgid "Academic Info"
+msgstr ""
+
+#. module: university1
+#: model_terms:ir.ui.view,arch_db:university1.view_university_report_graph
+#: model_terms:ir.ui.view,arch_db:university1.view_university_report_pivot
+msgid "Academic Performance Report"
+msgstr ""
+
+#. module: university1
+#: model_terms:ir.ui.view,arch_db:university1.view_student_form
+msgid "Academic Records"
+msgstr ""
+
+#. module: university1
+#: model:mail.template,subject:university1.email_template_student_report
+msgid ""
+"Academic Report for {{ object.name }} - {{ object.university_id.name }}"
+msgstr ""
+
+#. module: university1
+#: model:ir.actions.act_window,name:university1.action_university_report
+msgid "Academic Reports"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_university_student__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_university_student__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_university_student__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_university_student__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_university_student__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: university1
+#: model_terms:ir.ui.view,arch_db:university1.view_student_form
+msgid "Address"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_university_student__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_university_report__average_grade
+#: model_terms:ir.ui.view,arch_db:university1.student_report_document
+msgid "Average Grade"
+msgstr ""
+
+#. module: university1
+#: model_terms:ir.ui.view,arch_db:university1.view_student_report_send_wizard_form
+msgid "Cancel"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_university_student__city
+#: model:ir.model.fields,field_description:university1.field_university_university__city
+msgid "City"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_university_student__country_id
+#: model:ir.model.fields,field_description:university1.field_university_university__country_id
+msgid "Country"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_student_report_send_wizard__create_uid
+#: model:ir.model.fields,field_description:university1.field_university_department__create_uid
+#: model:ir.model.fields,field_description:university1.field_university_enrollment__create_uid
+#: model:ir.model.fields,field_description:university1.field_university_grade__create_uid
+#: model:ir.model.fields,field_description:university1.field_university_student__create_uid
+#: model:ir.model.fields,field_description:university1.field_university_subject__create_uid
+#: model:ir.model.fields,field_description:university1.field_university_teacher__create_uid
+#: model:ir.model.fields,field_description:university1.field_university_university__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_student_report_send_wizard__create_date
+#: model:ir.model.fields,field_description:university1.field_university_department__create_date
+#: model:ir.model.fields,field_description:university1.field_university_enrollment__create_date
+#: model:ir.model.fields,field_description:university1.field_university_grade__create_date
+#: model:ir.model.fields,field_description:university1.field_university_student__create_date
+#: model:ir.model.fields,field_description:university1.field_university_subject__create_date
+#: model:ir.model.fields,field_description:university1.field_university_teacher__create_date
+#: model:ir.model.fields,field_description:university1.field_university_university__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: university1
+#: model_terms:ir.ui.view,arch_db:university1.portal_my_grades
+#: model_terms:ir.ui.view,arch_db:university1.student_report_document
+msgid "Date"
+msgstr ""
+
+#. module: university1
+#: model:ir.model,name:university1.model_university_department
+#: model:ir.model.fields,field_description:university1.field_university_report__department_id
+#: model:ir.model.fields,field_description:university1.field_university_teacher__department_id
+msgid "Department"
+msgstr ""
+
+#. module: university1
+#: model:ir.actions.act_window,name:university1.action_department
+#: model:ir.model.fields,field_description:university1.field_university_university__department_ids
+#: model:ir.ui.menu,name:university1.menu_university_departments
+#: model_terms:ir.ui.view,arch_db:university1.view_university_form
+msgid "Departments"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_university_university__departments_count
+msgid "Departments Count"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_university_university__director_id
+msgid "Director"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_student_report_send_wizard__display_name
+#: model:ir.model.fields,field_description:university1.field_university_department__display_name
+#: model:ir.model.fields,field_description:university1.field_university_enrollment__display_name
+#: model:ir.model.fields,field_description:university1.field_university_grade__display_name
+#: model:ir.model.fields,field_description:university1.field_university_report__display_name
+#: model:ir.model.fields,field_description:university1.field_university_student__display_name
+#: model:ir.model.fields,field_description:university1.field_university_subject__display_name
+#: model:ir.model.fields,field_description:university1.field_university_teacher__display_name
+#: model:ir.model.fields,field_description:university1.field_university_university__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_university_student__email
+msgid "Email"
+msgstr ""
+
+#. module: university1
+#: model:ir.model,name:university1.model_university_enrollment
+#: model:ir.model.fields,field_description:university1.field_university_grade__enrollment_id
+msgid "Enrollment"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_university_enrollment__name
+msgid "Enrollment Name"
+msgstr ""
+
+#. module: university1
+#: model:ir.actions.act_window,name:university1.action_enrollment
+#: model:ir.model.fields,field_description:university1.field_university_student__enrollment_ids
+#: model:ir.model.fields,field_description:university1.field_university_subject__enrollment_ids
+#: model:ir.model.fields,field_description:university1.field_university_teacher__enrollment_ids
+#: model:ir.model.fields,field_description:university1.field_university_university__enrollment_ids
+#: model:ir.ui.menu,name:university1.menu_university_enrollments
+#: model_terms:ir.ui.view,arch_db:university1.view_student_form
+#: model_terms:ir.ui.view,arch_db:university1.view_subject_form
+#: model_terms:ir.ui.view,arch_db:university1.view_teacher_form
+#: model_terms:ir.ui.view,arch_db:university1.view_university_form
+msgid "Enrollments"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_university_student__enrollments_count
+#: model:ir.model.fields,field_description:university1.field_university_subject__enrollments_count
+#: model:ir.model.fields,field_description:university1.field_university_teacher__enrollments_count
+#: model:ir.model.fields,field_description:university1.field_university_university__enrollments_count
+msgid "Enrollments Count"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_university_student__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_university_student__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,help:university1.field_university_student__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: university1
+#: model:ir.model,name:university1.model_university_grade
+#: model:ir.model.fields,field_description:university1.field_university_grade__value
+#: model_terms:ir.ui.view,arch_db:university1.portal_my_grades
+#: model_terms:ir.ui.view,arch_db:university1.portal_my_home_grades
+#: model_terms:ir.ui.view,arch_db:university1.student_report_document
+msgid "Grade"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_university_grade__date
+msgid "Grade Date"
+msgstr ""
+
+#. module: university1
+#: model:ir.actions.act_window,name:university1.action_grade
+#: model:ir.model.fields,field_description:university1.field_university_enrollment__grade_ids
+#: model:ir.model.fields,field_description:university1.field_university_student__grade_ids
+#: model:ir.ui.menu,name:university1.menu_university_grades
+#: model_terms:ir.ui.view,arch_db:university1.portal_my_grades
+#: model_terms:ir.ui.view,arch_db:university1.view_enrollment_form
+#: model_terms:ir.ui.view,arch_db:university1.view_student_form
+msgid "Grades"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_university_student__grades_count
+msgid "Grades Count"
+msgstr ""
+
+#. module: university1
+#: model_terms:ir.ui.view,arch_db:university1.portal_my_grades
+msgid "Grades History"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_university_grade__teacher_id
+msgid "Grading Teacher"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_university_student__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_university_department__head_id
+msgid "Head of Department"
+msgstr ""
+
+#. module: university1
+#: model_terms:ir.ui.view,arch_db:university1.portal_my_grades
+msgid "Home"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_student_report_send_wizard__id
+#: model:ir.model.fields,field_description:university1.field_university_department__id
+#: model:ir.model.fields,field_description:university1.field_university_enrollment__id
+#: model:ir.model.fields,field_description:university1.field_university_grade__id
+#: model:ir.model.fields,field_description:university1.field_university_report__id
+#: model:ir.model.fields,field_description:university1.field_university_student__id
+#: model:ir.model.fields,field_description:university1.field_university_subject__id
+#: model:ir.model.fields,field_description:university1.field_university_teacher__id
+#: model:ir.model.fields,field_description:university1.field_university_university__id
+msgid "ID"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_university_student__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,help:university1.field_university_student__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,help:university1.field_university_student__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,help:university1.field_university_student__message_has_error
+#: model:ir.model.fields,help:university1.field_university_student__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_university_student__image
+#: model:ir.model.fields,field_description:university1.field_university_teacher__image
+#: model:ir.model.fields,field_description:university1.field_university_university__image
+msgid "Image"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_university_student__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_university_student__lang
+msgid "Language"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_student_report_send_wizard__write_uid
+#: model:ir.model.fields,field_description:university1.field_university_department__write_uid
+#: model:ir.model.fields,field_description:university1.field_university_enrollment__write_uid
+#: model:ir.model.fields,field_description:university1.field_university_grade__write_uid
+#: model:ir.model.fields,field_description:university1.field_university_student__write_uid
+#: model:ir.model.fields,field_description:university1.field_university_subject__write_uid
+#: model:ir.model.fields,field_description:university1.field_university_teacher__write_uid
+#: model:ir.model.fields,field_description:university1.field_university_university__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_student_report_send_wizard__write_date
+#: model:ir.model.fields,field_description:university1.field_university_department__write_date
+#: model:ir.model.fields,field_description:university1.field_university_enrollment__write_date
+#: model:ir.model.fields,field_description:university1.field_university_grade__write_date
+#: model:ir.model.fields,field_description:university1.field_university_student__write_date
+#: model:ir.model.fields,field_description:university1.field_university_subject__write_date
+#: model:ir.model.fields,field_description:university1.field_university_teacher__write_date
+#: model:ir.model.fields,field_description:university1.field_university_university__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_student_report_send_wizard__body
+msgid "Message Body"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_university_student__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_university_student__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_university_student__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_university_department__name
+#: model:ir.model.fields,field_description:university1.field_university_student__name
+#: model:ir.model.fields,field_description:university1.field_university_subject__name
+#: model:ir.model.fields,field_description:university1.field_university_teacher__name
+#: model:ir.model.fields,field_description:university1.field_university_university__name
+msgid "Name"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_university_student__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_university_student__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_university_student__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_university_student__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: university1
+#: model_terms:ir.ui.view,arch_db:university1.portal_my_grades
+msgid "No grades available yet."
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_university_student__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_university_student__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,help:university1.field_university_student__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,help:university1.field_university_student__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: university1
+#: model_terms:ir.ui.view,arch_db:university1.university_list_template
+msgid "Our Universities"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_university_student__zip
+#: model:ir.model.fields,field_description:university1.field_university_university__zip
+msgid "Postal Code"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_university_report__professor_id
+#: model_terms:ir.ui.view,arch_db:university1.student_report_document
+msgid "Professor"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_student_report_send_wizard__email_to
+msgid "Recipient Email"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_university_student__user_id
+msgid "Related User"
+msgstr ""
+
+#. module: university1
+#: model_terms:ir.ui.view,arch_db:university1.student_report_document
+msgid "Report generated on"
+msgstr ""
+
+#. module: university1
+#: model:ir.ui.menu,name:university1.menu_university_reports
+msgid "Reports"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_university_student__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: university1
+#: model_terms:ir.ui.view,arch_db:university1.teachers_list_template
+msgid "Return to Universities"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_university_student__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: university1
+#: model_terms:ir.ui.view,arch_db:university1.view_student_report_send_wizard_form
+msgid "Send"
+msgstr ""
+
+#. module: university1
+#: model_terms:ir.ui.view,arch_db:university1.view_student_form
+msgid "Send Academic Report"
+msgstr ""
+
+#. module: university1
+#: model:ir.actions.act_window,name:university1.action_student_report_send_wizard
+#: model_terms:ir.ui.view,arch_db:university1.view_student_report_send_wizard_form
+msgid "Send Report by Email"
+msgstr ""
+
+#. module: university1
+#: model:ir.model,name:university1.model_student_report_send_wizard
+msgid "Send Student Report by Email"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_university_student__state_id
+#: model:ir.model.fields,field_description:university1.field_university_university__state_id
+msgid "State"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,help:university1.field_university_student__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_university_student__street
+#: model:ir.model.fields,field_description:university1.field_university_university__street
+msgid "Street"
+msgstr ""
+
+#. module: university1
+#: model:ir.model,name:university1.model_university_student
+#: model:ir.model.fields,field_description:university1.field_student_report_send_wizard__student_id
+#: model:ir.model.fields,field_description:university1.field_university_enrollment__student_id
+#: model:ir.model.fields,field_description:university1.field_university_grade__student_id
+#: model:ir.model.fields,field_description:university1.field_university_report__student_id
+msgid "Student"
+msgstr ""
+
+#. module: university1
+#: model:ir.actions.report,name:university1.action_report_student
+#: model_terms:ir.ui.view,arch_db:university1.student_report_document
+msgid "Student Academic Report"
+msgstr ""
+
+#. module: university1
+#: model_terms:ir.ui.view,arch_db:university1.view_student_form
+msgid "Student Name"
+msgstr ""
+
+#. module: university1
+#: model:mail.template,name:university1.email_template_student_report
+msgid "Student: Academic Report Email"
+msgstr ""
+
+#. module: university1
+#: model:ir.actions.act_window,name:university1.action_student
+#: model:ir.model.fields,field_description:university1.field_university_university__student_ids
+#: model:ir.ui.menu,name:university1.menu_university_students
+#: model_terms:ir.ui.view,arch_db:university1.view_university_form
+msgid "Students"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_university_university__students_count
+msgid "Students Count"
+msgstr ""
+
+#. module: university1
+#: model:ir.model,name:university1.model_university_subject
+#: model:ir.model.fields,field_description:university1.field_student_report_send_wizard__subject
+#: model:ir.model.fields,field_description:university1.field_university_enrollment__subject_id
+#: model:ir.model.fields,field_description:university1.field_university_report__subject_id
+#: model_terms:ir.ui.view,arch_db:university1.portal_my_grades
+#: model_terms:ir.ui.view,arch_db:university1.student_report_document
+msgid "Subject"
+msgstr ""
+
+#. module: university1
+#: model:ir.actions.act_window,name:university1.action_subject
+#: model:ir.model.fields,field_description:university1.field_university_teacher__subject_ids
+#: model:ir.ui.menu,name:university1.menu_university_subjects
+msgid "Subjects"
+msgstr ""
+
+#. module: university1
+#: model:ir.model,name:university1.model_university_teacher
+#: model:ir.model.fields,field_description:university1.field_university_enrollment__teacher_id
+#: model_terms:ir.ui.view,arch_db:university1.portal_my_grades
+msgid "Teacher"
+msgstr ""
+
+#. module: university1
+#: model_terms:ir.ui.view,arch_db:university1.view_teacher_form
+msgid "Teacher Name"
+msgstr ""
+
+#. module: university1
+#: model:ir.actions.act_window,name:university1.action_teacher
+#: model:ir.model.fields,field_description:university1.field_university_department__teacher_ids
+#: model:ir.model.fields,field_description:university1.field_university_subject__teacher_ids
+#: model:ir.model.fields,field_description:university1.field_university_university__teacher_ids
+#: model:ir.ui.menu,name:university1.menu_university_teachers
+#: model_terms:ir.ui.view,arch_db:university1.university_list_template
+#: model_terms:ir.ui.view,arch_db:university1.view_subject_form
+#: model_terms:ir.ui.view,arch_db:university1.view_university_form
+msgid "Teachers"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_university_subject__teachers_count
+#: model:ir.model.fields,field_description:university1.field_university_university__teachers_count
+msgid "Teachers Count"
+msgstr ""
+
+#. module: university1
+#: model_terms:ir.ui.view,arch_db:university1.teachers_list_template
+msgid "Teachers from"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_university_student__tutor_id
+msgid "Tutor"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,help:university1.field_university_student__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: university1
+#: model:website.menu,name:university1.menu_universities
+msgid "Universidades"
+msgstr ""
+
+#. module: university1
+#: model:ir.actions.act_window,name:university1.action_university
+#: model:ir.ui.menu,name:university1.menu_university_universities
+msgid "Universities"
+msgstr ""
+
+#. module: university1
+#: model:ir.model,name:university1.model_university_university
+#: model:ir.model.fields,field_description:university1.field_university_department__university_id
+#: model:ir.model.fields,field_description:university1.field_university_enrollment__university_id
+#: model:ir.model.fields,field_description:university1.field_university_report__university_id
+#: model:ir.model.fields,field_description:university1.field_university_student__university_id
+#: model:ir.model.fields,field_description:university1.field_university_subject__university_id
+#: model:ir.model.fields,field_description:university1.field_university_teacher__university_id
+#: model:ir.ui.menu,name:university1.menu_university_root
+msgid "University"
+msgstr ""
+
+#. module: university1
+#: model:ir.actions.act_window,name:university1.action_university_dashboard
+msgid "University Dashboard"
+msgstr ""
+
+#. module: university1
+#: model_terms:ir.ui.view,arch_db:university1.view_university_form
+msgid "University Name"
+msgstr ""
+
+#. module: university1
+#: model:ir.model,name:university1.model_university_report
+msgid "University Report"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,field_description:university1.field_university_student__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: university1
+#: model:ir.model.fields,help:university1.field_university_student__website_message_ids
+msgid "Website communication history"
+msgstr ""

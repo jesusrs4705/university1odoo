@@ -1,0 +1,53 @@
+<odoo>
+    <record id="view_grade_list" model="ir.ui.view">
+        <field name="name">university.grade.list</field>
+        <field name="model">university.grade</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="student_id"/>
+                <field name="enrollment_id"/>
+                <field name="value"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_grade_form" model="ir.ui.view">
+        <field name="name">university.grade.form</field>
+        <field name="model">university.grade</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="student_id"/>
+                        <field name="enrollment_id"/>
+                        <field name="value"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_grade_kanban" model="ir.ui.view">
+        <field name="name">university.grade.kanban</field>
+        <field name="model">university.grade</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="value"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <strong><field name="student_id"/></strong>
+                            <div><field name="value"/></div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="action_grade" model="ir.actions.act_window">
+        <field name="name">Grades</field>
+        <field name="res_model">university.grade</field>
+        <field name="view_mode">list,form,kanban</field>
+    </record>
+</odoo>

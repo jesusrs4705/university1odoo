@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="student_report_document">
+        <t t-call="web.basic_layout">
+            <div class="page" style="padding: 0 20px;">
+                <!-- Header with Basic Info -->
+                <div class="row mb-2">
+                    <div class="col-12 text-center">
+                        <h2 class="text-primary mb-2" style="font-size: 22px; font-weight: bold; margin-top: 0;">Student Academic Report</h2>
+                        <h3 class="text-muted mb-1" style="font-size: 18px;"><span t-field="doc.name"/></h3>
+                        <h4 class="text-muted" style="font-size: 15px;"><span t-field="doc.university_id.name"/></h4>
+                    </div>
+                </div>
+
+                <!-- Contact Information Card -->
+                <div class="card mb-3" style="box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                    <div class="card-header bg-light py-2 text-center">
+                        <h4 class="mb-0" style="font-size: 16px;"><i class="fa fa-address-card"/> Contact Information</h4>
+                    </div>
+                    <div class="card-body py-2">
+                        <div class="row text-center">
+                            <div class="col-6">
+                                <p t-if="doc.street" class="mb-2"><i class="fa fa-home mr-1"/> <span t-field="doc.street"/></p>
+                                <p t-if="doc.city" class="mb-2"><i class="fa fa-city mr-1"/> <span t-field="doc.city"/></p>
+                                <p t-if="doc.zip" class="mb-2"><i class="fa fa-envelope mr-1"/> <span t-field="doc.zip"/></p>
+                            </div>
+                            <div class="col-6">
+                                <p t-if="doc.state_id" class="mb-2"><i class="fa fa-map-marker mr-1"/> <span t-field="doc.state_id.name"/></p>
+                                <p t-if="doc.country_id" class="mb-2"><i class="fa fa-globe mr-1"/> <span t-field="doc.country_id.name"/></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Academic Summary Table -->
+                <div class="card mb-3" style="box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                    <div class="card-header bg-light py-2 text-center">
+                        <h4 class="mb-0" style="font-size: 16px;"><i class="fa fa-graduation-cap"/> Academic Summary</h4>
+                    </div>
+                    <div class="card-body p-0">
+                        <table class="table table-striped mb-0" style="width: 100%; table-layout: fixed;">
+                            <thead>
+                                <tr>
+                                    <th style="width: 40%; padding: 8px; vertical-align: middle; background-color: #f8f9fa; border-bottom: 2px solid #dee2e6; text-align: center;">Subject</th>
+                                    <th style="width: 40%; padding: 8px; vertical-align: middle; background-color: #f8f9fa; border-bottom: 2px solid #dee2e6; text-align: center;">Professor</th>
+                                    <th style="width: 20%; padding: 8px; vertical-align: middle; background-color: #f8f9fa; border-bottom: 2px solid #dee2e6; text-align: center;">Average Grade</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="doc.enrollment_ids" t-as="enrollment">
+                                    <tr>
+                                        <td style="padding: 8px; vertical-align: middle; text-align: center;"><span t-field="enrollment.subject_id.name"/></td>
+                                        <td style="padding: 8px; vertical-align: middle; text-align: center;"><span t-field="enrollment.teacher_id.name"/></td>
+                                        <td style="padding: 8px; vertical-align: middle; text-align: center;">
+                                            <t t-set="avg" t-value="sum(enrollment.grade_ids.mapped('value'))/len(enrollment.grade_ids) if enrollment.grade_ids else 0"/>
+                                            <span t-esc="'%.2f' % avg" 
+                                                  t-attf-class="badge badge-pill px-2 py-1 {{ 'badge-success' if avg >= 7 else ('badge-warning' if avg >= 5 else 'badge-danger') }}"
+                                                  style="font-size: 13px; min-width: 50px; display: inline-block;"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Detailed Grade History -->
+                <div class="card mb-3" style="box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                    <div class="card-header bg-light py-2 text-center">
+                        <h4 class="mb-0" style="font-size: 16px;"><i class="fa fa-history"/> Grade History</h4>
+                    </div>
+                    <div class="card-body p-0">
+                        <table class="table table-striped mb-0" style="width: 100%; table-layout: fixed;">
+                            <thead>
+                                <tr>
+                                    <th style="width: 30%; padding: 8px; vertical-align: middle; background-color: #f8f9fa; border-bottom: 2px solid #dee2e6; text-align: center;">Subject</th>
+                                    <th style="width: 30%; padding: 8px; vertical-align: middle; background-color: #f8f9fa; border-bottom: 2px solid #dee2e6; text-align: center;">Professor</th>
+                                    <th style="width: 20%; padding: 8px; vertical-align: middle; background-color: #f8f9fa; border-bottom: 2px solid #dee2e6; text-align: center;">Grade</th>
+                                    <th style="width: 20%; padding: 8px; vertical-align: middle; background-color: #f8f9fa; border-bottom: 2px solid #dee2e6; text-align: center;">Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="doc.grade_ids.sorted(key=lambda r: r.date, reverse=True)" t-as="grade">
+                                    <tr>
+                                        <td style="padding: 8px; vertical-align: middle; text-align: center;"><span t-field="grade.enrollment_id.subject_id.name"/></td>
+                                        <td style="padding: 8px; vertical-align: middle; text-align: center;"><span t-field="grade.enrollment_id.teacher_id.name"/></td>
+                                        <td style="padding: 8px; vertical-align: middle; text-align: center;">
+                                            <span t-field="grade.value" 
+                                                  t-attf-class="badge badge-pill px-2 py-1 {{ 'badge-success' if grade.value >= 7 else ('badge-warning' if grade.value >= 5 else 'badge-danger') }}"
+                                                  style="font-size: 13px; min-width: 50px; display: inline-block;"/>
+                                        </td>
+                                        <td style="padding: 8px; vertical-align: middle; text-align: center;"><span t-field="grade.date"/></td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Footer with Additional Info -->
+                <div class="text-center text-muted mt-2" style="border-top: 1px solid #dee2e6;">
+                    <small style="font-size: 11px; padding-top: 10px; display: block;">Report generated on <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d %H:%M:%S')"/></small>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="student_report">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="university1.student_report_document"/>
+            </t>
+        </t>
+    </template>
+</odoo>

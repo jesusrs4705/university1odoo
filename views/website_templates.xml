@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Add menu item to website -->
+    <record id="menu_universities" model="website.menu">
+        <field name="name">Universidades</field>
+        <field name="url">/universidad</field>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence" type="int">50</field>
+    </record>
+
+    <!-- Template for universities -->
+    <template id="university_list_template" name="Universities List">
+        <t t-call="website.layout">
+            <div class="oe_structure">
+                <section class="s_title pt32 pb32" data-name="Title">
+                    <div class="container">
+                        <h1 class="text-center">Our Universities</h1>
+                        <div class="row mt32">
+                            <t t-foreach="universities" t-as="university">
+                                <div class="col-lg-4 col-md-6 mb-4">
+                                    <div class="card h-100">
+                                        <t t-if="university.image">
+                                            <img class="card-img-top" t-att-src="image_data_uri(university.image)" 
+                                                 t-att-alt="university.name" style="height: 200px; object-fit: cover;"/>
+                                        </t>
+                                        <t t-else="">
+                                            <img class="card-img-top" src="/web/static/img/placeholder.png" 
+                                                 t-att-alt="university.name" style="height: 200px; object-fit: cover;"/>
+                                        </t>
+                                        <div class="card-body">
+                                            <h5 class="card-title" t-field="university.name"/>
+                                            <p class="card-text" t-if="university.city">
+                                                <i class="fa fa-map-marker"/> <span t-field="university.city"/>
+                                            </p>
+                                            <a t-att-href="'/profesores/%s' % university.id" 
+                                               class="btn btn-primary">Teachers</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </t>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </t>
+    </template>
+
+    <!-- Template forr teachers list -->
+    <template id="teachers_list_template" name="Teachers List">
+        <t t-call="website.layout">
+            <div class="oe_structure">
+                <section class="s_title pt32 pb32" data-name="Title">
+                    <div class="container">
+                        <!-- Image and name -->
+                        <div class="text-center mb-4">
+                            <t t-if="university.image">
+                                <img t-att-src="image_data_uri(university.image)" 
+                                     t-att-alt="university.name" 
+                                     style="max-height: 200px; object-fit: contain;"/>
+                            </t>
+                            <t t-else="">
+                                <img src="/web/static/img/placeholder.png" 
+                                     t-att-alt="university.name" 
+                                     style="max-height: 200px; object-fit: contain;"/>
+                            </t>
+                            <h1 class="mt-3">
+                                Teachers from <t t-esc="university.name"/>
+                            </h1>
+                        </div>
+                        <!-- Teacher's list -->
+                        <div class="row mt32">
+                            <t t-foreach="teachers" t-as="teacher">
+                                <div class="col-lg-4 col-md-6 mb-4">
+                                    <div class="card h-100">
+                                        <t t-if="teacher.image">
+                                            <img class="card-img-top" t-att-src="image_data_uri(teacher.image)" 
+                                                 t-att-alt="teacher.name" style="height: 200px; object-fit: cover;"/>
+                                        </t>
+                                        <t t-else="">
+                                            <img class="card-img-top" src="/web/static/img/placeholder.png" 
+                                                 t-att-alt="teacher.name" style="height: 200px; object-fit: cover;"/>
+                                        </t>
+                                        <div class="card-body">
+                                            <h5 class="card-title" t-field="teacher.name"/>
+                                            <p class="card-text" t-if="teacher.department_id">
+                                                <i class="fa fa-building"/> 
+                                                <span t-field="teacher.department_id.name"/>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </t>
+                        </div>
+                        <div class="text-center mt32">
+                            <a href="/universidad" class="btn btn-secondary">
+                                Return to Universities
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </t>
+    </template>
+</odoo>

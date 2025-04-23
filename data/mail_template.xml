@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="email_template_student_report" model="mail.template">
+            <field name="name">Student: Academic Report Email</field>
+            <field name="model_id" ref="university1.model_university_student"/>
+            <field name="subject">Academic Report for {{ object.name }} - {{ object.university_id.name }}</field>
+            <field name="email_from">{{ user.email_formatted }}</field>
+            <field name="email_to">{{ object.email }}</field>
+            <field name="lang">{{ object.lang }}</field>
+            <field name="report_template_ids" eval="[(4, ref('university1.action_report_student'))]"/>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                        Dear <t t-out="object.name"/>,
+                        <br/><br/>
+                        Please find attached your complete academic report from <t t-out="object.university_id.name"/>.
+                        <br/><br/>
+                        This report includes:
+                        <ul>
+                            <li>Your personal and contact information</li>
+                            <li>Current course enrollments</li>
+                            <li>Academic performance summary</li>
+                            <li>Detailed grade history</li>
+                        </ul>
+                        <br/>
+                        If you notice any discrepancies in the report or have any questions, please contact your tutor 
+                        <t t-if="object.tutor_id">(<t t-out="object.tutor_id.name"/>)</t> 
+                        or the university administration.
+                        <br/><br/>
+                        Best regards,<br/>
+                        <t t-out="object.university_id.name"/> Administration
+                    </p>
+                </div>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+    </data>
+</odoo>

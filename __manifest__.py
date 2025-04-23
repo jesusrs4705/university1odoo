@@ -1,0 +1,37 @@
+{
+    'name': 'University',
+    'version': '1.0',
+    'summary': 'University management module',
+    'author': 'Jesus Rodriguez',
+    'depends': ['base', 'mail', 'website', 'portal'],
+    'data': [
+        'security/website_security.xml',
+        'security/ir.model.access.csv',
+        'data/mail_template.xml',
+        'views/portal_templates.xml',
+        'views/website_templates.xml',
+        'views/university_views.xml',
+        'views/department_views.xml',
+        'views/teacher_views.xml',
+        'views/subject_views.xml',
+        'views/student_views.xml',
+        'views/enrollment_views.xml',
+        'views/grade_views.xml',
+        'views/university_report_views.xml',
+        'views/menu.xml',
+        'reports/student_report.xml',
+        'reports/student_report_template.xml',
+        'wizards/student_report_send_wizard_views.xml',
+    ],
+    'assets': {
+        'web.assets_frontend': [
+            '/university1/static/src/scss/custom.scss',
+        ],
+        'web.assets_backend': [
+            '/university1/static/src/js/student_form.js',
+            'purchase/static/src/toaster_button/*',
+        ],
+    },
+    'application': True,
+    'license': 'LGPL-3',
+}
