@@ -7,7 +7,7 @@
             <field name="subject">Academic Report for {{ object.name }} - {{ object.university_id.name }}</field>
             <field name="email_from">{{ user.email_formatted }}</field>
             <field name="email_to">{{ object.email }}</field>
-            <field name="lang">{{ object.lang }}</field>
+            <field name="lang">{{ object.lang }}</field> 
             <field name="report_template_ids" eval="[(4, ref('university1.action_report_student'))]"/>
             <field name="body_html" type="html">
                 <div style="margin: 0px; padding: 0px;">
