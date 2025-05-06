@@ -30,6 +30,7 @@
         'web.assets_backend': [
             '/university1/static/src/js/student_form.js',
             'purchase/static/src/toaster_button/*',
+            '/university1/static/src/send_email_button/*',
         ],
     },
     'application': True,

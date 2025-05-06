@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="university1.SendEmailButton">
+        <button t-on-click="onClick" type="button" class="btn btn-primary" t-att-title="props.title">
+            <i class="fa fa-envelope"/>
+        </button>
+    </t>
+</templates>

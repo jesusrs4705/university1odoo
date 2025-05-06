@@ -48,7 +48,7 @@
                             <label for="email"/>
                             <div class="o_row">
                                 <field name="email" nolabel="1"/>
-                                <widget name="toaster_button" button_name="action_send_email" />
+                                <widget name="send_email_button" method='action_send_email' title="Send Email"/>
                             </div>
                             <field name="lang"/>
                         </group>
