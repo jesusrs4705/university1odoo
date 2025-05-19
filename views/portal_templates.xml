@@ -1,28 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- Extend Portal Home -->
+    <!-- Extend Portal Home para Calificaciones -->
     <template id="portal_my_home_grades" inherit_id="portal.portal_my_home" name="Portal My Home : Grades">
-        <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
-            <t t-if="request.env['university.student'].sudo().search([('user_id', '=', request.env.user.id)], limit=1)">
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <div class="card-title">
-                                <h3>
-                                    <i class="fa fa-graduation-cap me-2"/>Grades
-                                </h3>
+        <xpath expr="//div[hasclass('o_portal_docs')]" position="after">
+            <div class="mt-4" style="max-width: 400px;">
+                <a href="/my/grades" class="text-decoration-none">
+                    <div class="p-3" style="background-color: #f8f9fa; border-radius: 8px;">
+                        <div class="d-flex align-items-center">
+                            <div class="me-3">
+                                <i class="fa fa-graduation-cap text-muted" style="font-size: 1.75rem;"></i>
                             </div>
-                            <small class="text-muted">View grade history</small>
-                            <div class="mt-3">
-                                <a href="/my/grades" class="btn btn-secondary w-100">
-                                    <span t-esc="grades_count"/> Grade<t t-if="grades_count != 1">s</t>
-                                    <i class="fa fa-arrow-right ms-2"></i>
-                                </a>
+                            <div>
+                                <div class="text-dark mb-0" style="font-size: 1rem; font-weight: 500;">Calificaciones</div>
+                                <div class="text-muted" style="font-size: 0.875rem;">Ver historial de calificaciones</div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </t>
+                </a>
+            </div>
         </xpath>
     </template>
 
@@ -38,7 +33,7 @@
                                 <li class="breadcrumb-item">
                                     <a href="/my/home">Home</a>
                                 </li>
-                                <li class="breadcrumb-item active">Grades</li>
+                                <li class="breadcrumb-item active">Calificaciones</li>
                             </ol>
                         </div>
                     </div>
@@ -46,46 +41,50 @@
                     <!-- Content -->
                     <div class="row mt-4">
                         <div class="col-12">
-                            <h3>Grades History</h3>
+                            <h3>Historial de Calificaciones</h3>
                         </div>
                     </div>
                     
                     <div class="row mt-4">
                         <div class="col-12">
-                            <div class="table-responsive">
-                                <table class="table table-striped o_portal_my_doc_table">
-                                    <thead>
-                                        <tr class="table-light">
-                                            <th>Subject</th>
-                                            <th>Teacher</th>
-                                            <th>Date</th>
-                                            <th class="text-end">Grade</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <t t-if="not grades">
-                                            <tr>
-                                                <td colspan="4" class="text-center text-muted">
-                                                    <div class="p-4">
-                                                        No grades available yet.
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </t>
-                                        <t t-foreach="grades" t-as="grade">
-                                            <tr>
-                                                <td><span t-field="grade.enrollment_id.subject_id.name"/></td>
-                                                <td><span t-field="grade.enrollment_id.teacher_id.name"/></td>
-                                                <td><span t-field="grade.date" t-options='{"format": "dd/MM/yyyy"}'/></td>
-                                                <td class="text-end">
-                                                    <span t-field="grade.value" 
-                                                          t-options='{"widget": "float", "precision": 2}'
-                                                          t-attf-class="badge {{ 'bg-success' if grade.value >= 7 else ('bg-warning' if grade.value >= 5 else 'bg-danger') }}"/>
-                                                </td>
-                                            </tr>
-                                        </t>
-                                    </tbody>
-                                </table>
+                            <div class="card o_portal_card mb-4">
+                                <div class="card-body p-0">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped mb-0">
+                                            <thead>
+                                                <tr class="table-light">
+                                                    <th>Asignatura</th>
+                                                    <th>Profesor</th>
+                                                    <th>Fecha</th>
+                                                    <th class="text-end">Calificación</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <t t-if="not grades">
+                                                    <tr>
+                                                        <td colspan="4" class="text-center text-muted">
+                                                            <div class="p-4">
+                                                                No hay calificaciones disponibles aún.
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </t>
+                                                <t t-foreach="grades" t-as="grade">
+                                                    <tr>
+                                                        <td><span t-field="grade.enrollment_id.subject_id.name"/></td>
+                                                        <td><span t-field="grade.enrollment_id.teacher_id.name"/></td>
+                                                        <td><span t-field="grade.date" t-options='{"format": "dd/MM/yyyy"}'/></td>
+                                                        <td class="text-end">
+                                                            <span t-field="grade.value" 
+                                                                t-options='{"widget": "float", "precision": 2}'
+                                                                t-attf-class="badge {{ 'bg-success' if grade.value >= 7 else ('bg-warning' if grade.value >= 5 else 'bg-danger') }}"/>
+                                                        </td>
+                                                    </tr>
+                                                </t>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
