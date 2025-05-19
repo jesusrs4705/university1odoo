@@ -10,6 +10,7 @@
         'data/mail_template.xml',
         'views/portal_templates.xml',
         'views/website_templates.xml',
+        'views/mail_compose_message_views.xml',
         'views/university_views.xml',
         'views/department_views.xml',
         'views/teacher_views.xml',

@@ -1,5 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_student_report_send_wizard,access.student.report.send.wizard,model_student_report_send_wizard,base.group_user,1,1,1,1
 access_university_university,university.university,university1.model_university_university,base.group_user,1,1,1,1
 access_university_department,university.department,university1.model_university_department,base.group_user,1,1,1,1
 access_university_teacher,university.teacher,university1.model_university_teacher,base.group_user,1,1,1,1

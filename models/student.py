@@ -92,17 +92,22 @@ class Student(models.Model):
         }
 
     def action_send_report(self):
-        '''Open wizard to send academic report by email'''
+        '''Open mail compose window with student report template'''
         self.ensure_one()
+        template = self.env.ref('university1.email_template_student_report')
         return {
             'type': 'ir.actions.act_window',
             'name': 'Send Academic Report',
-            'res_model': 'student.report.send.wizard',
+            'res_model': 'mail.compose.message',
             'view_mode': 'form',
             'target': 'new',
             'context': {
-                'default_student_id': self.id,
-                'default_email_to': self.email,
+                'default_model': 'university.student',
+                'default_res_ids': [self.id],
+                'default_use_template': bool(template),
+                'default_template_id': template.id,
+                'default_composition_mode': 'comment',
+                'force_email': True
             }
         }
 
