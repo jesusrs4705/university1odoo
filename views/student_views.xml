@@ -60,14 +60,6 @@
                             <field name="country_id"/>
                         </group>
                     </group>
-                    <notebook>
-                        <page string="Academic Records">
-                            <group>
-                                <field name="enrollment_ids"/>
-                                <field name="grade_ids"/>
-                            </group>
-                        </page>
-                    </notebook>
                 </sheet>
             </form>
         </field>
