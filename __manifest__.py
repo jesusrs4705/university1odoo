@@ -22,7 +22,6 @@
         'views/menu.xml',
         'reports/student_report.xml',
         'reports/student_report_template.xml',
-        'wizards/student_report_send_wizard_views.xml',
     ],
     'assets': {
         'web.assets_frontend': [
