@@ -5,7 +5,6 @@
         <field name="model">university.report</field>
         <field name="arch" type="xml">
             <graph string="Academic Performance Report" type="bar">
-                <field name="student_id"/>
                 <field name="university_id"/>
                 <field name="average_grade" type="measure"/>
             </graph>
