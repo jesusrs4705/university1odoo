@@ -41,7 +41,7 @@ class Grade(models.Model):
     def _check_value(self):
         for record in self:
             if record.value < 0 or record.value > 10:
-                raise ValidationError('La nota debe estar entre 0 y 10.')
+                raise ValidationError('The grade must be between 0 and 10.')
 
     def init(self):
         """

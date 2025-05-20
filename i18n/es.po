@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0-20250320\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-23 12:25+0000\n"
-"PO-Revision-Date: 2025-04-23 12:25+0000\n"
+"POT-Creation-Date: 2025-05-20 09:38+0000\n"
+"PO-Revision-Date: 2025-05-20 09:38+0000\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
@@ -26,9 +26,9 @@ msgstr "'Informe del Estudiante - %s' % (object.name)"
 msgid ""
 "<div style=\"margin: 0px; padding: 0px;\">\n"
 "                    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
-"                        Dear ,\n"
+"                        Dear <t t-out=\"object.name\"/>,\n"
 "                        <br/><br/>\n"
-"                        Please find attached your complete academic report from .\n"
+"                        Please find attached your complete academic report from <t t-out=\"object.university_id.name\"/>.\n"
 "                        <br/><br/>\n"
 "                        This report includes:\n"
 "                        </p><ul>\n"
@@ -39,35 +39,35 @@ msgid ""
 "                        </ul>\n"
 "                        <br/>\n"
 "                        If you notice any discrepancies in the report or have any questions, please contact your tutor \n"
-"                        () \n"
+"                        <t t-if=\"object.tutor_id\">(<t t-out=\"object.tutor_id.name\"/>)</t> \n"
 "                        or the university administration.\n"
 "                        <br/><br/>\n"
 "                        Best regards,<br/>\n"
-"                         Administration\n"
+"                        <t t-out=\"object.university_id.name\"/> Administration\n"
 "                    \n"
 "                </div>\n"
 "            "
 msgstr ""
 "<div style=\"margin: 0px; padding: 0px;\">\n"
 "                    <p style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
-"                        Buenas,\n"
+"                        Buenas, <t t-out=\"object.name\"/>,\n"
 "                        <br/><br/>\n"
-"                        Encontrará su Informe Académico completo adjuntado.\n"
+"                        Encontrará su Informe Académico completo adjuntado. <t t-out=\"object.university_id.name\"/>.\n"
 "                        <br/><br/>\n"
 "                        Este informe incluye:\n"
 "                        </p><ul>\n"
-"                            <li>Tu información personal y de contato</li>\n"
+"                            <li>Tu información personal y de contacto</li>\n"
 "                            <li>Inscripciones actuales a cursos</li>\n"
-"                            <li>Resumen de rendimiento académico</li>\n"
-"                            <li>Historial de calificaciones detallado</li>\n"
+"                            <li>Resumen de rendimiento Académico</li>\n"
+"                            <li>Historial de notas detallado</li>\n"
 "                        </ul>\n"
 "                        <br/>\n"
-"                        Si nota alguna discrepancia en el informe o tiene alguna pregunta, comuníquese con su tutor. \n"
-"                        () \n"
+"                        Si nota alguna discrepancia en el informe o tiene alguna pregunta, comuníquese con su tutor \n"
+"                        <t t-if=\"object.tutor_id\">(<t t-out=\"object.tutor_id.name\"/>)</t> \n"
 "                        o la administración universitaria.\n"
 "                        <br/><br/>\n"
 "                        Atentamente,<br/>\n"
-"                         La Administración\n"
+"                        <t t-out=\"object.university_id.name\"/> La Administración\n"
 "                    \n"
 "                </div>\n"
 "            "
@@ -78,11 +78,6 @@ msgid "<i class=\"fa fa-address-card\"/> Contact Information"
 msgstr "<i class=\"fa fa-address-card\"/> Información de Contacto"
 
 #. module: university1
-#: model_terms:ir.ui.view,arch_db:university1.portal_my_home_grades
-msgid "<i class=\"fa fa-graduation-cap me-2\"/>Grades"
-msgstr "<i class=\"fa fa-graduation-cap me-2\"/>Calificaciones"
-
-#. module: university1
 #: model_terms:ir.ui.view,arch_db:university1.student_report_document
 msgid "<i class=\"fa fa-graduation-cap\"/> Academic Summary"
 msgstr "<i class=\"fa fa-graduation-cap\"/> Resumen Académico"
@@ -90,28 +85,18 @@ msgstr "<i class=\"fa fa-graduation-cap\"/> Resumen Académico"
 #. module: university1
 #: model_terms:ir.ui.view,arch_db:university1.student_report_document
 msgid "<i class=\"fa fa-history\"/> Grade History"
-msgstr "<i class=\"fa fa-history\"/> Historial de Calificaciones"
-
-#. module: university1
-#: model_terms:ir.ui.view,arch_db:university1.portal_my_home_grades
-msgid "<small class=\"text-muted\">View grade history</small>"
-msgstr "<small class=\"text-muted\">Ver historial de calificaciones</small>"
+msgstr "<i class=\"fa fa-history\"/> Historial de Notas "
 
 #. module: university1
 #. odoo-python
 #: code:addons/university1/models/student.py:0
 msgid "A sample email has been send to %s"
-msgstr "Se ha enviado un correo electrónico de muestra a %s"
+msgstr "Un correo de prueba ha sido enviado a %s"
 
 #. module: university1
 #: model:ir.model.constraint,message:university1.constraint_university_student_unique_user
 msgid "A user can only be linked to one student!"
-msgstr "¡Un usuario sólo puede estar vinculado a un estudiante!"
-
-#. module: university1
-#: model_terms:ir.ui.view,arch_db:university1.view_student_form
-msgid "Academic Info"
-msgstr "Información Académica"
+msgstr "Un usuario solo puede estar asignado a un estudiante!"
 
 #. module: university1
 #: model_terms:ir.ui.view,arch_db:university1.view_university_report_graph
@@ -120,16 +105,11 @@ msgid "Academic Performance Report"
 msgstr "Informe de Rendimiento Académico"
 
 #. module: university1
-#: model_terms:ir.ui.view,arch_db:university1.view_student_form
-msgid "Academic Records"
-msgstr "Expedientes Académicos"
-
-#. module: university1
 #: model:mail.template,subject:university1.email_template_student_report
 msgid ""
 "Academic Report for {{ object.name }} - {{ object.university_id.name }}"
 msgstr ""
-"Informe Académico de {{ object.name }} - {{ object.university_id.name }}"
+"Informe Académico para {{ object.name }} - {{ object.university_id.name }}"
 
 #. module: university1
 #: model:ir.actions.act_window,name:university1.action_university_report
@@ -139,7 +119,7 @@ msgstr "Informes Académicos"
 #. module: university1
 #: model:ir.model.fields,field_description:university1.field_university_student__message_needaction
 msgid "Action Needed"
-msgstr "Acción necesaria"
+msgstr "Acción Requerida"
 
 #. module: university1
 #: model:ir.model.fields,field_description:university1.field_university_student__activity_ids
@@ -162,11 +142,6 @@ msgid "Activity Type Icon"
 msgstr "Icono de tipo de actividad"
 
 #. module: university1
-#: model_terms:ir.ui.view,arch_db:university1.view_student_form
-msgid "Address"
-msgstr "Dirección"
-
-#. module: university1
 #: model:ir.model.fields,field_description:university1.field_university_student__message_attachment_count
 msgid "Attachment Count"
 msgstr "Recuento de archivos adjuntos"
@@ -175,27 +150,28 @@ msgstr "Recuento de archivos adjuntos"
 #: model:ir.model.fields,field_description:university1.field_university_report__average_grade
 #: model_terms:ir.ui.view,arch_db:university1.student_report_document
 msgid "Average Grade"
-msgstr "Calificación promedio"
-
-#. module: university1
-#: model_terms:ir.ui.view,arch_db:university1.view_student_report_send_wizard_form
-msgid "Cancel"
-msgstr "Cancelar"
+msgstr "Nota Media"
 
 #. module: university1
 #: model:ir.model.fields,field_description:university1.field_university_student__city
 #: model:ir.model.fields,field_description:university1.field_university_university__city
+#: model_terms:ir.ui.view,arch_db:university1.view_student_form
 msgid "City"
 msgstr "Ciudad"
 
 #. module: university1
-#: model:ir.model.fields,field_description:university1.field_university_student__country_id
-#: model:ir.model.fields,field_description:university1.field_university_university__country_id
-msgid "Country"
-msgstr "País"
+#: model_terms:ir.ui.view,arch_db:university1.view_student_form
+msgid "Contact"
+msgstr "Contacto"
 
 #. module: university1
-#: model:ir.model.fields,field_description:university1.field_student_report_send_wizard__create_uid
+#: model:ir.model.fields,field_description:university1.field_university_student__country_id
+#: model:ir.model.fields,field_description:university1.field_university_university__country_id
+#: model_terms:ir.ui.view,arch_db:university1.view_student_form
+msgid "Country"
+msgstr "Pais"
+
+#. module: university1
 #: model:ir.model.fields,field_description:university1.field_university_department__create_uid
 #: model:ir.model.fields,field_description:university1.field_university_enrollment__create_uid
 #: model:ir.model.fields,field_description:university1.field_university_grade__create_uid
@@ -207,7 +183,6 @@ msgid "Created by"
 msgstr "Creado por"
 
 #. module: university1
-#: model:ir.model.fields,field_description:university1.field_student_report_send_wizard__create_date
 #: model:ir.model.fields,field_description:university1.field_university_department__create_date
 #: model:ir.model.fields,field_description:university1.field_university_enrollment__create_date
 #: model:ir.model.fields,field_description:university1.field_university_grade__create_date
@@ -242,7 +217,7 @@ msgstr "Departamentos"
 #. module: university1
 #: model:ir.model.fields,field_description:university1.field_university_university__departments_count
 msgid "Departments Count"
-msgstr "Contador de Departamentos"
+msgstr "Contador Departamentos"
 
 #. module: university1
 #: model:ir.model.fields,field_description:university1.field_university_university__director_id
@@ -250,7 +225,6 @@ msgid "Director"
 msgstr "Director"
 
 #. module: university1
-#: model:ir.model.fields,field_description:university1.field_student_report_send_wizard__display_name
 #: model:ir.model.fields,field_description:university1.field_university_department__display_name
 #: model:ir.model.fields,field_description:university1.field_university_enrollment__display_name
 #: model:ir.model.fields,field_description:university1.field_university_grade__display_name
@@ -260,12 +234,23 @@ msgstr "Director"
 #: model:ir.model.fields,field_description:university1.field_university_teacher__display_name
 #: model:ir.model.fields,field_description:university1.field_university_university__display_name
 msgid "Display Name"
-msgstr "Nombre para mostrar"
+msgstr "Nombre a mostrar"
 
 #. module: university1
 #: model:ir.model.fields,field_description:university1.field_university_student__email
+#: model_terms:ir.ui.view,arch_db:university1.view_student_form
 msgid "Email"
 msgstr "Email"
+
+#. module: university1
+#: model:ir.model,name:university1.model_mail_compose_message
+msgid "Email composition wizard"
+msgstr "Asistente de redacción de correo electrónico"
+
+#. module: university1
+#: model_terms:ir.ui.view,arch_db:university1.view_student_form
+msgid "English"
+msgstr "Inglés"
 
 #. module: university1
 #: model:ir.model,name:university1.model_university_enrollment
@@ -298,7 +283,7 @@ msgstr "Inscripciones"
 #: model:ir.model.fields,field_description:university1.field_university_teacher__enrollments_count
 #: model:ir.model.fields,field_description:university1.field_university_university__enrollments_count
 msgid "Enrollments Count"
-msgstr "Contador de Inscripciones"
+msgstr "Contador Inscripciones"
 
 #. module: university1
 #: model:ir.model.fields,field_description:university1.field_university_student__message_follower_ids
@@ -319,7 +304,6 @@ msgstr ""
 #: model:ir.model,name:university1.model_university_grade
 #: model:ir.model.fields,field_description:university1.field_university_grade__value
 #: model_terms:ir.ui.view,arch_db:university1.portal_my_grades
-#: model_terms:ir.ui.view,arch_db:university1.portal_my_home_grades
 #: model_terms:ir.ui.view,arch_db:university1.student_report_document
 msgid "Grade"
 msgstr "Calificación"
@@ -335,6 +319,7 @@ msgstr "Fecha de Calificación"
 #: model:ir.model.fields,field_description:university1.field_university_student__grade_ids
 #: model:ir.ui.menu,name:university1.menu_university_grades
 #: model_terms:ir.ui.view,arch_db:university1.portal_my_grades
+#: model_terms:ir.ui.view,arch_db:university1.portal_my_home_grades
 #: model_terms:ir.ui.view,arch_db:university1.view_enrollment_form
 #: model_terms:ir.ui.view,arch_db:university1.view_student_form
 msgid "Grades"
@@ -343,7 +328,7 @@ msgstr "Calificaciones"
 #. module: university1
 #: model:ir.model.fields,field_description:university1.field_university_student__grades_count
 msgid "Grades Count"
-msgstr "Contadr de Calificaciones"
+msgstr "Contador Calificaciones"
 
 #. module: university1
 #: model_terms:ir.ui.view,arch_db:university1.portal_my_grades
@@ -353,7 +338,7 @@ msgstr "Historial de Calificaciones"
 #. module: university1
 #: model:ir.model.fields,field_description:university1.field_university_grade__teacher_id
 msgid "Grading Teacher"
-msgstr "Profesor de Calificaciones"
+msgstr "Profesor de calificaciones"
 
 #. module: university1
 #: model:ir.model.fields,field_description:university1.field_university_student__has_message
@@ -363,7 +348,7 @@ msgstr "Tiene mensaje"
 #. module: university1
 #: model:ir.model.fields,field_description:university1.field_university_department__head_id
 msgid "Head of Department"
-msgstr "Jefe de departamento"
+msgstr "Jefe de Departamento"
 
 #. module: university1
 #: model_terms:ir.ui.view,arch_db:university1.portal_my_grades
@@ -371,7 +356,6 @@ msgid "Home"
 msgstr "Inicio"
 
 #. module: university1
-#: model:ir.model.fields,field_description:university1.field_student_report_send_wizard__id
 #: model:ir.model.fields,field_description:university1.field_university_department__id
 #: model:ir.model.fields,field_description:university1.field_university_enrollment__id
 #: model:ir.model.fields,field_description:university1.field_university_grade__id
@@ -391,7 +375,7 @@ msgstr "Icono"
 #. module: university1
 #: model:ir.model.fields,help:university1.field_university_student__activity_exception_icon
 msgid "Icon to indicate an exception activity."
-msgstr "Icono para indicar una actividad de excepción."
+msgstr "Icono para indicar una excepción de actividad"
 
 #. module: university1
 #: model:ir.model.fields,help:university1.field_university_student__message_needaction
@@ -418,11 +402,11 @@ msgstr "Es seguidor"
 
 #. module: university1
 #: model:ir.model.fields,field_description:university1.field_university_student__lang
+#: model_terms:ir.ui.view,arch_db:university1.view_student_form
 msgid "Language"
 msgstr "Idioma"
 
 #. module: university1
-#: model:ir.model.fields,field_description:university1.field_student_report_send_wizard__write_uid
 #: model:ir.model.fields,field_description:university1.field_university_department__write_uid
 #: model:ir.model.fields,field_description:university1.field_university_enrollment__write_uid
 #: model:ir.model.fields,field_description:university1.field_university_grade__write_uid
@@ -431,10 +415,9 @@ msgstr "Idioma"
 #: model:ir.model.fields,field_description:university1.field_university_teacher__write_uid
 #: model:ir.model.fields,field_description:university1.field_university_university__write_uid
 msgid "Last Updated by"
-msgstr "Actualizado por última vez por"
+msgstr "Última actualización por"
 
 #. module: university1
-#: model:ir.model.fields,field_description:university1.field_student_report_send_wizard__write_date
 #: model:ir.model.fields,field_description:university1.field_university_department__write_date
 #: model:ir.model.fields,field_description:university1.field_university_enrollment__write_date
 #: model:ir.model.fields,field_description:university1.field_university_grade__write_date
@@ -444,11 +427,6 @@ msgstr "Actualizado por última vez por"
 #: model:ir.model.fields,field_description:university1.field_university_university__write_date
 msgid "Last Updated on"
 msgstr "Última actualización en"
-
-#. module: university1
-#: model:ir.model.fields,field_description:university1.field_student_report_send_wizard__body
-msgid "Message Body"
-msgstr "Cuerpo del mensaje"
 
 #. module: university1
 #: model:ir.model.fields,field_description:university1.field_university_student__message_has_error
@@ -467,10 +445,12 @@ msgstr "Fecha límite de mi actividad"
 
 #. module: university1
 #: model:ir.model.fields,field_description:university1.field_university_department__name
+#: model:ir.model.fields,field_description:university1.field_university_grade__name
 #: model:ir.model.fields,field_description:university1.field_university_student__name
 #: model:ir.model.fields,field_description:university1.field_university_subject__name
 #: model:ir.model.fields,field_description:university1.field_university_teacher__name
 #: model:ir.model.fields,field_description:university1.field_university_university__name
+#: model_terms:ir.ui.view,arch_db:university1.view_student_form
 msgid "Name"
 msgstr "Nombre"
 
@@ -496,8 +476,8 @@ msgstr "Siguiente tipo de actividad"
 
 #. module: university1
 #: model_terms:ir.ui.view,arch_db:university1.portal_my_grades
-msgid "No grades available yet."
-msgstr "Aún no hay calificaciones disponibles"
+msgid "No hay calificaciones disponibles aún."
+msgstr "No hay calificaciones disponibles aún."
 
 #. module: university1
 #: model:ir.model.fields,field_description:university1.field_university_student__message_needaction_counter
@@ -528,18 +508,19 @@ msgstr "Nuestras Universidades"
 #: model:ir.model.fields,field_description:university1.field_university_student__zip
 #: model:ir.model.fields,field_description:university1.field_university_university__zip
 msgid "Postal Code"
-msgstr "Código Postal"
+msgstr "Codigo Postal"
 
 #. module: university1
 #: model:ir.model.fields,field_description:university1.field_university_report__professor_id
+#: model_terms:ir.ui.view,arch_db:university1.portal_my_grades
 #: model_terms:ir.ui.view,arch_db:university1.student_report_document
 msgid "Professor"
 msgstr "Profesor"
 
 #. module: university1
-#: model:ir.model.fields,field_description:university1.field_student_report_send_wizard__email_to
-msgid "Recipient Email"
-msgstr "Correo electrónico del destinatario"
+#: model:ir.model.fields,field_description:university1.field_university_student__rating_ids
+msgid "Ratings"
+msgstr "Calificaciones"
 
 #. module: university1
 #: model:ir.model.fields,field_description:university1.field_university_student__user_id
@@ -549,7 +530,7 @@ msgstr "Usuario relacionado"
 #. module: university1
 #: model_terms:ir.ui.view,arch_db:university1.student_report_document
 msgid "Report generated on"
-msgstr "Informe generado el"
+msgstr "Informe generado en "
 
 #. module: university1
 #: model:ir.ui.menu,name:university1.menu_university_reports
@@ -564,17 +545,12 @@ msgstr "Usuario responsable"
 #. module: university1
 #: model_terms:ir.ui.view,arch_db:university1.teachers_list_template
 msgid "Return to Universities"
-msgstr "Regresar a las Universidades"
+msgstr "Regresar a Universidades"
 
 #. module: university1
 #: model:ir.model.fields,field_description:university1.field_university_student__message_has_sms_error
 msgid "SMS Delivery error"
-msgstr "Error de entrega de SMS"
-
-#. module: university1
-#: model_terms:ir.ui.view,arch_db:university1.view_student_report_send_wizard_form
-msgid "Send"
-msgstr "Enviar"
+msgstr "Error en el envío SMS"
 
 #. module: university1
 #: model_terms:ir.ui.view,arch_db:university1.view_student_form
@@ -582,21 +558,21 @@ msgid "Send Academic Report"
 msgstr "Enviar Informe Académico"
 
 #. module: university1
-#: model:ir.actions.act_window,name:university1.action_student_report_send_wizard
-#: model_terms:ir.ui.view,arch_db:university1.view_student_report_send_wizard_form
+#: model_terms:ir.ui.view,arch_db:university1.view_student_form
+msgid "Send Email"
+msgstr "Enviar Email"
+
+#. module: university1
+#: model:ir.actions.act_window,name:university1.action_email_compose_message_wizard_student
 msgid "Send Report by Email"
 msgstr "Enviar Informe por Email"
 
 #. module: university1
-#: model:ir.model,name:university1.model_student_report_send_wizard
-msgid "Send Student Report by Email"
-msgstr "Enviar Informe del Estudiante por Email"
-
-#. module: university1
 #: model:ir.model.fields,field_description:university1.field_university_student__state_id
 #: model:ir.model.fields,field_description:university1.field_university_university__state_id
+#: model_terms:ir.ui.view,arch_db:university1.view_student_form
 msgid "State"
-msgstr "Estado"
+msgstr "Provincia"
 
 #. module: university1
 #: model:ir.model.fields,help:university1.field_university_student__activity_state
@@ -606,7 +582,7 @@ msgid ""
 "Today: Activity date is today\n"
 "Planned: Future activities."
 msgstr ""
-"Estado basado en actividades.\n"
+"Estado basado en actividades\n"
 "Vencido: La fecha de vencimiento ya pasó\n"
 "Hoy: La fecha de la actividad es hoy\n"
 "Planificado: Actividades futuras."
@@ -618,8 +594,12 @@ msgid "Street"
 msgstr "Calle"
 
 #. module: university1
+#: model_terms:ir.ui.view,arch_db:university1.view_student_form
+msgid "Street..."
+msgstr "Calle..."
+
+#. module: university1
 #: model:ir.model,name:university1.model_university_student
-#: model:ir.model.fields,field_description:university1.field_student_report_send_wizard__student_id
 #: model:ir.model.fields,field_description:university1.field_university_enrollment__student_id
 #: model:ir.model.fields,field_description:university1.field_university_grade__student_id
 #: model:ir.model.fields,field_description:university1.field_university_report__student_id
@@ -633,14 +613,9 @@ msgid "Student Academic Report"
 msgstr "Informe Académico del Estudiante"
 
 #. module: university1
-#: model_terms:ir.ui.view,arch_db:university1.view_student_form
-msgid "Student Name"
-msgstr "Nombre del Estudiante"
-
-#. module: university1
 #: model:mail.template,name:university1.email_template_student_report
 msgid "Student: Academic Report Email"
-msgstr "Estudiante: Correo electrónico del informe académico"
+msgstr "Estudiante: Email de Informe Académico"
 
 #. module: university1
 #: model:ir.actions.act_window,name:university1.action_student
@@ -653,11 +628,10 @@ msgstr "Estudiantes"
 #. module: university1
 #: model:ir.model.fields,field_description:university1.field_university_university__students_count
 msgid "Students Count"
-msgstr "Contador de Estudiantes"
+msgstr "Contador Estudiantes"
 
 #. module: university1
 #: model:ir.model,name:university1.model_university_subject
-#: model:ir.model.fields,field_description:university1.field_student_report_send_wizard__subject
 #: model:ir.model.fields,field_description:university1.field_university_enrollment__subject_id
 #: model:ir.model.fields,field_description:university1.field_university_report__subject_id
 #: model_terms:ir.ui.view,arch_db:university1.portal_my_grades
@@ -675,7 +649,6 @@ msgstr "Asignaturas"
 #. module: university1
 #: model:ir.model,name:university1.model_university_teacher
 #: model:ir.model.fields,field_description:university1.field_university_enrollment__teacher_id
-#: model_terms:ir.ui.view,arch_db:university1.portal_my_grades
 msgid "Teacher"
 msgstr "Profesor"
 
@@ -700,7 +673,7 @@ msgstr "Profesores"
 #: model:ir.model.fields,field_description:university1.field_university_subject__teachers_count
 #: model:ir.model.fields,field_description:university1.field_university_university__teachers_count
 msgid "Teachers Count"
-msgstr "Contador de Profesores"
+msgstr "Contador Profesores"
 
 #. module: university1
 #: model_terms:ir.ui.view,arch_db:university1.teachers_list_template
@@ -709,6 +682,7 @@ msgstr "Profesores de"
 
 #. module: university1
 #: model:ir.model.fields,field_description:university1.field_university_student__tutor_id
+#: model_terms:ir.ui.view,arch_db:university1.view_student_form
 msgid "Tutor"
 msgstr "Tutor"
 
@@ -718,13 +692,9 @@ msgid "Type of the exception activity on record."
 msgstr "Tipo de actividad de excepción registrada."
 
 #. module: university1
-#: model:website.menu,name:university1.menu_universities
-msgid "Universities"
-msgstr "Universidades"
-
-#. module: university1
 #: model:ir.actions.act_window,name:university1.action_university
 #: model:ir.ui.menu,name:university1.menu_university_universities
+#: model:website.menu,name:university1.menu_universities
 msgid "Universities"
 msgstr "Universidades"
 
@@ -756,11 +726,36 @@ msgid "University Report"
 msgstr "Informe Universitario"
 
 #. module: university1
+#: model_terms:ir.ui.view,arch_db:university1.view_student_form
+msgid "University name..."
+msgstr "Nombre de la Universidad..."
+
+#. module: university1
+#: model_terms:ir.ui.view,arch_db:university1.portal_my_home_grades
+msgid "View Grades History"
+msgstr "Ver Historial de Notas"
+
+#. module: university1
 #: model:ir.model.fields,field_description:university1.field_university_student__website_message_ids
 msgid "Website Messages"
-msgstr "Mensajes del sitio web"
+msgstr "Mensajes web"
 
 #. module: university1
 #: model:ir.model.fields,help:university1.field_university_student__website_message_ids
 msgid "Website communication history"
 msgstr "Historial de comunicación del sitio web"
+
+#. module: university1
+#: model_terms:ir.ui.view,arch_db:university1.view_student_form
+msgid "ZIP"
+msgstr "ZIP"
+
+#. module: university1
+#: model_terms:ir.ui.view,arch_db:university1.view_student_form
+msgid "e.g. Academic Advisor"
+msgstr "p. ej. Asesor académico"
+
+#. module: university1
+#: model_terms:ir.ui.view,arch_db:university1.view_student_form
+msgid "student@example.com"
+msgstr "student@example.com"

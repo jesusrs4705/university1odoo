@@ -37,11 +37,6 @@
                             <field name="subject_ids" widget="many2many_tags"/>
                         </group>
                     </group>
-                    <notebook>
-                        <page string="Enrollments">
-                            <field name="enrollment_ids"/>
-                        </page>
-                    </notebook>
                 </sheet>
             </form>
         </field>

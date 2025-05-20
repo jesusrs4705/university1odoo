@@ -11,8 +11,8 @@
                                 <i class="fa fa-graduation-cap text-muted" style="font-size: 1.75rem;"></i>
                             </div>
                             <div>
-                                <div class="text-dark mb-0" style="font-size: 1rem; font-weight: 500;">Calificaciones</div>
-                                <div class="text-muted" style="font-size: 0.875rem;">Ver historial de calificaciones</div>
+                                <div class="text-dark mb-0" style="font-size: 1rem; font-weight: 500;">Grades</div>
+                                <div class="text-muted" style="font-size: 0.875rem;">View Grades History</div>
                             </div>
                         </div>
                     </div>
@@ -33,7 +33,7 @@
                                 <li class="breadcrumb-item">
                                     <a href="/my/home">Home</a>
                                 </li>
-                                <li class="breadcrumb-item active">Calificaciones</li>
+                                <li class="breadcrumb-item active">Grades</li>
                             </ol>
                         </div>
                     </div>
@@ -41,7 +41,7 @@
                     <!-- Content -->
                     <div class="row mt-4">
                         <div class="col-12">
-                            <h3>Historial de Calificaciones</h3>
+                            <h3>Grades History</h3>
                         </div>
                     </div>
                     
@@ -53,10 +53,10 @@
                                         <table class="table table-striped mb-0">
                                             <thead>
                                                 <tr class="table-light">
-                                                    <th>Asignatura</th>
-                                                    <th>Profesor</th>
-                                                    <th>Fecha</th>
-                                                    <th class="text-end">Calificación</th>
+                                                    <th>Subject</th>
+                                                    <th>Professor</th>
+                                                    <th>Date</th>
+                                                    <th class="text-end">Grade</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
