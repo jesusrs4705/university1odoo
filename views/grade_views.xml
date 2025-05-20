@@ -7,6 +7,7 @@
                 <field name="student_id"/>
                 <field name="enrollment_id"/>
                 <field name="value"/>
+                <field name="date"/>
             </list>
         </field>
     </record>
@@ -21,6 +22,7 @@
                         <field name="student_id"/>
                         <field name="enrollment_id"/>
                         <field name="value"/>
+                        <field name="date"/>
                     </group>
                 </sheet>
             </form>
