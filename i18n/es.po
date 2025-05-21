@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0-20250320\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-21 07:07+0000\n"
-"PO-Revision-Date: 2025-05-21 07:07+0000\n"
+"POT-Creation-Date: 2025-05-21 08:25+0000\n"
+"PO-Revision-Date: 2025-05-21 08:25+0000\n"
 "Last-Translator: \n"
 "Language-Team: Spanish\n"
 "MIME-Version: 1.0\n"
@@ -85,7 +85,12 @@ msgstr "<i class=\"fa fa-graduation-cap\"/> Resumen Académico"
 #. module: university1
 #: model_terms:ir.ui.view,arch_db:university1.student_report_document
 msgid "<i class=\"fa fa-history\"/> Grade History"
-msgstr "<i class=\"fa fa-history\"/> Historial de Notas "
+msgstr "<i class=\"fa fa-history\"/> Historial de Calificaciones"
+
+#. module: university1
+#: model_terms:ir.ui.view,arch_db:university1.portal_my_home_grades
+msgid "<span>Grades</span>"
+msgstr "<span>Calificaciones</span>"
 
 #. module: university1
 #. odoo-python
