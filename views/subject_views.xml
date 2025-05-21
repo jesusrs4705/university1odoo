@@ -27,8 +27,6 @@
                     <group>
                         <field name="name"/>
                         <field name="university_id"/>
-                        <field name="teacher_ids"/>
-                        <field name="enrollment_ids"/>
                     </group>
                 </sheet>
             </form>

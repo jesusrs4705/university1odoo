@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0-20250320\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-20 09:38+0000\n"
-"PO-Revision-Date: 2025-05-20 09:38+0000\n"
+"POT-Creation-Date: 2025-05-21 07:07+0000\n"
+"PO-Revision-Date: 2025-05-21 07:07+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -131,11 +131,13 @@ msgstr ""
 #: model:ir.model.fields,field_description:university1.field_university_student__city
 #: model:ir.model.fields,field_description:university1.field_university_university__city
 #: model_terms:ir.ui.view,arch_db:university1.view_student_form
+#: model_terms:ir.ui.view,arch_db:university1.view_university_form
 msgid "City"
 msgstr ""
 
 #. module: university1
 #: model_terms:ir.ui.view,arch_db:university1.view_student_form
+#: model_terms:ir.ui.view,arch_db:university1.view_university_form
 msgid "Contact"
 msgstr ""
 
@@ -143,6 +145,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:university1.field_university_student__country_id
 #: model:ir.model.fields,field_description:university1.field_university_university__country_id
 #: model_terms:ir.ui.view,arch_db:university1.view_student_form
+#: model_terms:ir.ui.view,arch_db:university1.view_university_form
 msgid "Country"
 msgstr ""
 
@@ -196,7 +199,13 @@ msgstr ""
 
 #. module: university1
 #: model:ir.model.fields,field_description:university1.field_university_university__director_id
+#: model_terms:ir.ui.view,arch_db:university1.view_university_form
 msgid "Director"
+msgstr ""
+
+#. module: university1
+#: model_terms:ir.ui.view,arch_db:university1.view_university_form
+msgid "Director name..."
 msgstr ""
 
 #. module: university1
@@ -546,6 +555,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:university1.field_university_student__state_id
 #: model:ir.model.fields,field_description:university1.field_university_university__state_id
 #: model_terms:ir.ui.view,arch_db:university1.view_student_form
+#: model_terms:ir.ui.view,arch_db:university1.view_university_form
 msgid "State"
 msgstr ""
 
@@ -566,6 +576,7 @@ msgstr ""
 
 #. module: university1
 #: model_terms:ir.ui.view,arch_db:university1.view_student_form
+#: model_terms:ir.ui.view,arch_db:university1.view_university_form
 msgid "Street..."
 msgstr ""
 
@@ -718,6 +729,7 @@ msgstr ""
 
 #. module: university1
 #: model_terms:ir.ui.view,arch_db:university1.view_student_form
+#: model_terms:ir.ui.view,arch_db:university1.view_university_form
 msgid "ZIP"
 msgstr ""
 
