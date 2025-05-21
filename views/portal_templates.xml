@@ -3,7 +3,7 @@
     <!-- Extend Portal Home para Calificaciones -->
     <template id="portal_my_home_grades" inherit_id="portal.portal_my_home" name="Portal My Home : Grades">
         <xpath expr="//div[hasclass('o_portal_docs')]" position="after">
-            <div class="o_portal_index_card col-md-6 order-2">
+            <div class="o_portal_index_card col-md-6 order-2 mt-4">
                 <a class="d-flex gap-2 gap-md-3 py-3 pe-2 px-md-3 h-100 rounded text-decoration-none bg-100" href="/my/grades">
                     <div class="o_portal_icon d-block align-self-start">
                         <img data-oe-model="ir.ui.view" data-oe-id="488" data-oe-field="arch" data-oe-xpath="/t[1]/div[1]/a[1]/div[1]/img[1]" src="/university1/static/src/img/notas.png" width="50" height="50" alt="Grades" loading="lazy" style=""/>
